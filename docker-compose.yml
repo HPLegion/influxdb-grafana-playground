@@ -4,6 +4,7 @@ services:
 
   influxdb:
     image: influxdb:latest
+    user: $GID:$UID
     ports:
       - 8086:8086
     volumes:
@@ -11,6 +12,7 @@ services:
 
   grafana:
     image: grafana/grafana:latest
+    user: $GID:$UID
     ports:
       - 3000:3000
     volumes:
